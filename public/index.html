@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Server</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/css/uikit.min.css" />
+    <link rel="stylesheet" href="/stylesheets/main.css">
+</head>
+
+<body class="uk-background-muted">
+
+    <nav class="uk-navbar-container" uk-navbar>
+        <div class="uk-navbar-left">
+            <a class="uk-logo uk-navbar-item" href="/">
+                Minecraft server
+            </a>
+            <ul class="uk-navbar-nav">
+                <li class="uk-active">
+                    <a href="/">Dashboard</a>
+                </li>
+                <li class="uk-item">
+                    <a href="/login">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="uk-container">
+        <h1 class="uk-heading-large uk-margin-medium-top uk-text-center">Dashboard</h1>
+        <hr class="uk-divider-icon">
+        <div class="uk-column-1-2@s uk-column-divider uk-margin-small-bottom">
+            <div class="uk-card uk-padding-small uk-card-default uk-margin-small-bottom">
+                <h3>CPU usage
+                    <div class="uk-align-right">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M5 0a.5.5 0 0 1 .5.5V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2A2.5 2.5 0 0 1 14 4.5h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14a2.5 2.5 0 0 1-2.5 2.5v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14A2.5 2.5 0 0 1 2 11.5H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2A2.5 2.5 0 0 1 4.5 2V.5A.5.5 0 0 1 5 0zm-.5 3A1.5 1.5 0 0 0 3 4.5v7A1.5 1.5 0 0 0 4.5 13h7a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 11.5 3h-7zM5 6.5A1.5 1.5 0 0 1 6.5 5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5v-3zM6.5 6a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z" />
+                        </svg>
+                        <span id="cpuusagetext">0%</span>
+                    </div>
+                    <div class="uk-align-right">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M6 2a2 2 0 1 1 4 0v7.627a3.5 3.5 0 1 1-4 0V2zm2-1a1 1 0 0 0-1 1v7.901a.5.5 0 0 1-.25.433A2.499 2.499 0 0 0 8 15a2.5 2.5 0 0 0 1.25-4.666.5.5 0 0 1-.25-.433V2a1 1 0 0 0-1-1z" />
+                            <path d="M9.5 12.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                        </svg>
+                        <span id="cputemptext">0 °C</span>
+                    </div>
+                </h3>
+                <progress id="cpuusage" class="uk-progress" value="0" max="100"></progress>
+            </div>
+            <div class="uk-card uk-padding-small uk-card-default">
+                <h3>RAM usage
+                    <div class="uk-align-right">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M5 0a.5.5 0 0 1 .5.5V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2A2.5 2.5 0 0 1 14 4.5h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14a2.5 2.5 0 0 1-2.5 2.5v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14A2.5 2.5 0 0 1 2 11.5H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2A2.5 2.5 0 0 1 4.5 2V.5A.5.5 0 0 1 5 0zm-.5 3A1.5 1.5 0 0 0 3 4.5v7A1.5 1.5 0 0 0 4.5 13h7a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 11.5 3h-7zM5 6.5A1.5 1.5 0 0 1 6.5 5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5v-3zM6.5 6a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z" />
+                        </svg>
+                        <span id="ramusagetext">0%</span>
+                    </div>
+                </h3>
+                <progress id="ramusage" class="uk-progress" value="0" max="100"></progress>
+            </div>
+        </div>
+        <hr class="uk-divider-icon">
+        <div class="uk-margin-small-top">
+            <div class="uk-card uk-card-body uk-card-default uk-margin-medium-bottom">
+                <div class="uk-button-group uk-margin-small-bottom">
+                    <button class="uk-button uk-button-primary" id="startServer">
+                        Start
+                    </button>
+                    <button class="uk-button uk-button-danger" id="stopServer">
+                        Stop
+                    </button>
+                </div>
+                <div class="uk-background-muted">
+                    <xmp id="serverConsole"></xmp>
+                </div>
+                <div class="uk-button-group uk-width-1-1">
+                    <input class="uk-input" id="commandInput" autofocus type="text" placeholder="Enter a command">
+                    <button class="uk-button uk-button-primary" type="button">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit-icons.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+{
+    "webServerPort": "WEB SERVER PORT",
+    "webPassword": "PASSWORD FOR WEB CONSOLE",
+    "jarLocation": "MINECRAFT SERVER JAR FILE",
+    "jarArgs": [
+        "JAR EXECUTION ARGUMENTS"
+    ],
+    "rconPort": "MINECRAFT RCON PORT",
+    "rconPassword": "MINECRAFT RCON PASSWORD"
+}

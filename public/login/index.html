@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/css/uikit.min.css" />
+    <link rel="stylesheet" href="/stylesheets/main.css">
+</head>
+
+<body class="uk-background-muted">
+    <nav class="uk-navbar-container" uk-navbar>
+        <div class="uk-navbar-left">
+            <a class="uk-logo uk-navbar-item" href="/">
+                Minecraft server
+            </a>
+            <ul class="uk-navbar-nav">
+                <li class="uk-parent">
+                    <a href="/">Dashboard</a>
+                </li>
+                <li class="uk-active">
+                    <a href="/login">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="uk-container">
+        <h1 class="uk-heading-large uk-margin-medium-top uk-text-center">Login</h1>
+        <h1 class="uk-heading-divider"></h1>
+        <div class="uk-margin">
+            <input class="uk-input" type="password" placeholder="Password" id="password">
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/js/login.js"></script>
+</body>
+
+</html>

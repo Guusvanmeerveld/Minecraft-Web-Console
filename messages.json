@@ -1,0 +1,10 @@
+{
+    "start": {
+        "type": "start",
+        "success": true
+    },
+    "stop": {
+        "type": "stop",
+        "success": true
+    }
+}
