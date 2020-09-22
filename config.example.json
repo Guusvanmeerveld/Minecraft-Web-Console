@@ -1,6 +1,7 @@
 {
     "webServerPort": "WEB SERVER PORT",
     "webPassword": "PASSWORD FOR WEB CONSOLE",
+    "webProtocol": "[HTTPS / HTTP]"
     "jarLocation": "MINECRAFT SERVER JAR FILE",
     "jarArgs": [
         "JAR EXECUTION ARGUMENTS"
