@@ -1,10 +1,10 @@
 console.clear();
 
 const mcServer = require('./mcserver.js');
-const { webServerPort, webPassword } = require("./config.json");
+const { webServerPort, webPassword, webProtocol } = require("./config.json");
 const { stop, start } = require("./messages.json");
 const ws = require("ws");
-const https = require("https");
+const protocol = require(webProtocol);
 const fs = require("fs");
 
 const si = require("systeminformation");
@@ -23,11 +23,11 @@ var serverLog = {
     content: [],
 };
 
-const server = https.createServer({
-        key: fs.readFileSync("./key/key.pem"),
-        cert: fs.readFileSync("./key/cert.pem"),
-        passphrase: "",
-    },
+const server = protocol.createServer({
+    key: fs.readFileSync("./key/key.pem"),
+    cert: fs.readFileSync("./key/cert.pem"),
+    passphrase: "",
+},
     app
 );
 const wss = new ws.Server({ server });
@@ -100,6 +100,11 @@ wss.on("connection", (ws) => {
                 default:
                     break;
             }
+        } else {
+            sendInfo({
+                type: "response",
+                success: false
+            })
         }
     });
 
