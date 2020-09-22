@@ -11,21 +11,33 @@
 
 <body class="uk-background-muted">
 
-    <nav class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-container" uk-navbar>
         <div class="uk-navbar-left">
-            <a class="uk-logo uk-navbar-item" href="/">
-                Minecraft server
-            </a>
-            <ul class="uk-navbar-nav">
-                <li class="uk-active">
-                    <a href="/">Dashboard</a>
+            <a class="uk-navbar-toggle" uk-navbar-toggle-icon uk-toggle="target: #offcanvas-push"></a>
+        </div>
+    </div>
+
+    <div id="offcanvas-push" uk-offcanvas="mode: push; overlay: true">
+        <div class="uk-offcanvas-bar">
+
+            <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+            <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical uk-text-left">
+                <li class="uk-active uk-parent">
+                    <a href="/"><span uk-icon="home"></span> - Dashboard</a>
+                    <ul class="uk-nav-sub">
+                        <li><a href="#">Info</a></li>
+                        <li><a href="#">Console</a></li>
+                        <li><a href="#">Players</a></li>
+                    </ul>
                 </li>
-                <li class="uk-item">
-                    <a href="/login">Login</a>
+                <li class="uk-parent">
+                    <a href="/login"><span uk-icon="user"></span> - Login</a>
                 </li>
             </ul>
+
         </div>
-    </nav>
+    </div>
 
     <div class="uk-container">
         <h1 class="uk-heading-large uk-margin-medium-top uk-text-center">Dashboard</h1>

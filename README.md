@@ -16,6 +16,7 @@ Next, be sure to change [the example config file](config.example.json) to the wa
 **IMPORTANT:** You MUST enable RCON in your minecraft server.properties by otherwise this will NOT work. 
 You can enable RCON by adding the following to your server.properties: `enable-rcon=true`, `rcon.password=[YOUR RCON PASSWORD]` and `rcon.port=[YOUR RCON PORT]`.
 
+If you decide to use https you must put a `key.pem` and `cert.pem` in the [`key`](key/) folder.
 ## Usage
 Once you've installed and configured the web console, you can use `npm start` to start the web server. If you're hosting the server locally, you can connect to `http(s)://localhost:[YOUR WEB SERVER PORT]`.
 

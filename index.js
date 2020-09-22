@@ -23,13 +23,16 @@ var serverLog = {
     content: [],
 };
 
-const server = protocol.createServer({
-    key: fs.readFileSync("./key/key.pem"),
-    cert: fs.readFileSync("./key/cert.pem"),
-    passphrase: "",
-},
+const server = protocol.createServer(
+    webProtocol == "https" ? {
+        key: fs.readFileSync("./key/key.pem"),
+        cert: fs.readFileSync("./key/cert.pem"),
+        passphrase: "",
+    } :
+    null,
     app
 );
+
 const wss = new ws.Server({ server });
 
 app.use(express.static('public/'));
@@ -88,14 +91,14 @@ wss.on("connection", (ws) => {
 
                     serverStarted = false;
                     mcServer.stop();
-                    serverLog.content = [];
                     sendInfo({
                         type: "stopped",
                         success: true,
                     });
                     break;
                 case "command":
-                    mcServer.send();
+                    console.log(data.content);
+                    mcServer.sendConsole(data.content);
                     break;
                 default:
                     break;

@@ -1,6 +1,7 @@
 const q = document.getElementById.bind(document);
 const password = localStorage.getItem("password");
-var ws = new WebSocket(`wss://${location.host}/websocket`)
+const wss = location.protocol == "https:" ? "wss" : "ws";
+var ws = new WebSocket(`${wss}://${location.host}/websocket`)
 
 var serverConsole = q("serverConsole");
 serverConsole.scroll(0, serverConsole.scrollHeight);
@@ -17,10 +18,10 @@ ws.addEventListener('message', msg => {
             q("ramusagetext").innerHTML = data.ramUsage.toPrecision(3) + "%";
             break;
         case "log":
-            var console = data.content;
+            var consoleData = data.content;
             var consoleText = "";
 
-            console.forEach((line) => {
+            consoleData.forEach((line) => {
                 consoleText += line + "\n";
             });
 
@@ -44,6 +45,16 @@ ws.addEventListener('message', msg => {
         case "stopped":
             changeButton("Start", false, false)
             changeButton("Stop", true, true);
+            break;
+        case "response":
+            if (data.success) return;
+            console.log("yeet");
+            UIkit.notification({
+                message: "<span uk-icon='error'></span> You don't have the permission to do that",
+                status: "danger",
+                pos: "top-right",
+                timeout: 5000,
+            });
             break;
         default:
             break;
