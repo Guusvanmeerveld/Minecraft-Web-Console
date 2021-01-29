@@ -1,12 +1,3 @@
-*
-
-!public/
-!key
-key/*
-!config.example.json
-!index.js
-!LICENSE
-!mcserver.js
-!messages.json
-!package-lock.json
-!README.md
+config.json
+keys
+node_modules
