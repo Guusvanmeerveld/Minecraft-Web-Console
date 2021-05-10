@@ -1,0 +1,23 @@
+name: deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup checkout
+        uses: actions/checkout@v2
+      - name: Setup NodeJS v12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: Install all dependecies
+        run: yarn install
+      - name: Compile Typescript to JavaScript
+        run: yarn test-build
+      - name: ESlint check
+        run: yarn lint
