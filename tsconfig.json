@@ -7,7 +7,9 @@
 		"rootDir": "src",
 		"baseUrl": "src",
 		"paths": {
-			"@components/*": ["components/*"]
+			"@components/*": ["components/*"],
+			"@utils/*": ["utils/*"],
+			"@models/*": ["models/*"]
 		},
 		"esModuleInterop": true,
 		"skipLibCheck": true,
