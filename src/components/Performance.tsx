@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import useSWR from 'swr';
 
-import { ResponsiveLine } from '@nivo/line';
+// import { ResponsiveLine } from '@nivo/line';
 import { FaThermometerHalf } from 'react-icons/fa';
 
 import styles from './Performance.module.scss';
@@ -11,8 +11,8 @@ import CPUData from '@models/cpu';
 const DisplayStatistics: FC = () => {
 	const { data, error } = useSWR<CPUData>('/api/cpu', { refreshInterval: 10000 });
 
-	if (error) return <div>Failed to load data</div>;
-	if (!data) return <div>Loading performance data</div>;
+	if (error) return <h3>Failed to load data</h3>;
+	if (!data) return <h3>Loading performance data</h3>;
 
 	return (
 		<div>
