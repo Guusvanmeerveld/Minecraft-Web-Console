@@ -1,19 +1,22 @@
 import si from 'systeminformation';
 
 export default class CPU {
-	static async getTemperature(): Promise<number> {
+	static async getTemperature(): Promise<number | undefined> {
 		const cpu = await si.cpuTemperature();
 
 		if (typeof cpu.main != 'number') {
-			throw 'Could not read CPU temperature';
+			return;
 		}
 
 		return cpu.main;
 	}
 
-	static async getUsage(): Promise<[number, number, number]> {
-		const cpu = await si.cpu();
+	static async getUsage(): Promise<{ speed: number; cores: Array<number> }> {
+		const cpu = await si.cpuCurrentSpeed();
 
-		return [cpu.speed, cpu.speedMin, cpu.speedMax];
+		return {
+			speed: cpu.avg,
+			cores: cpu.cores,
+		};
 	}
 }
